@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/react-hooks";
 import UseForm from "./common/useForm";
 import Input from "./common/Input";
 import { SIGNIN_MUTATION } from "../resolvers/mutation";
+import {USER_QUERY} from '../resolvers/query';
 
 function App(props) {
   const [values, onChangeHandler, reset] = UseForm({ email: "", password: "" });
@@ -12,7 +13,8 @@ function App(props) {
     variables: {
       email: values.email,
       password: values.password
-    }
+    },
+    // refetchQueries: [{ query: USER_QUERY }],
   });
 
   const onSubmit = async e => {
@@ -20,7 +22,7 @@ function App(props) {
     await // console.log(props.);
     await signin();
     reset();
-    // props.history.push("/success");
+    props.history.push("/success");
 
     // reset();
   };
