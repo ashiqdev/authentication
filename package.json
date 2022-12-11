@@ -14,7 +14,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "crypto": "^1.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "graphql-tag": "^2.10.1",
     "handlebars": "^4.5.3",
     "handlebars-loader": "^1.7.1",
